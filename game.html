@@ -1,0 +1,90 @@
+<script>
+    var player = 'x'
+
+    function play(cellId) {
+        draw(cellId)
+        change()
+        victory()
+    }
+
+    function victory(){
+      var cell1 =document.getElementById(1)
+      var cell2 =document.getElementById(2)
+      var cell3 =document.getElementById(3)
+      var cell4 =document.getElementById(4)
+      var cell5 =document.getElementById(5)
+      var cell6 =document.getElementById(6)
+      var cell7 =document.getElementById(7)
+      var cell8 =document.getElementById(8)
+      var cell9 =document.getElementById(9)
+
+      var symbol = ''
+    for(var counter = 1; counter < 3; counter = counter + 1 ) {
+       if(counter == 1) {
+       symbol = 'x'
+       } else {
+        symbol = '0'  
+       }
+       if(cell1.innerHTML== symbol && cell2.innerHTML== symbol && cell3.innerHTML== symbol ){
+          alert("victory")
+      }
+      if(cell4.innerHTML== symbol && cell5.innerHTML== symbol && cell6.innerHTML== symbol ){
+          alert("victory")
+      }
+      if(cell7.innerHTML== symbol && cell8.innerHTML== symbol && cell9.innerHTML== symbol ){
+          alert("victory")
+      }
+      if (cell1.innerHTML == symbol && cell4.innerHTML == symbol && cell7.innerHTML == symbol) {
+         alert('victory')
+      }
+      if (cell2.innerHTML == symbol && cell5.innerHTML == symbol && cell8.innerHTML == symbol) {
+         alert('victory')
+      }
+      if (cell3.innerHTML == symbol && cell6.innerHTML == symbol && cell9.innerHTML == symbol) {
+         alert('victory')
+      }
+      if (cell1.innerHTML == symbol && cell5.innerHTML == symbol && cell9.innerHTML == symbol) {
+         alert('victory')
+      }
+      if (cell3.innerHTML == symbol && cell5.innerHTML == symbol && cell7.innerHTML == symbol) {
+         alert('victory')
+      }
+    }
+
+     
+    }
+
+     function draw(cellId) {
+        var tdTag = document.getElementById(cellId)
+        tdTag.innerHTML = player
+     }
+
+
+    function change() {
+        if (player == 'x') {
+            player = '0'
+        } else {
+            player = 'x'
+        }
+    }
+</script>
+
+<h1>x VS 0</h1>
+
+<table width="300" height="300" border="1">
+    <tr>
+        <td id="1" onclick="play(1)" width="100" height="100"></td>
+        <td id="2" onclick="play(2)" width="100"></td>
+        <td id="3" onclick="play(3)" width="100"></td>
+    </tr>
+    <tr>
+        <td id="4" onclick="play(4)" height="100"></td>
+        <td id="5" onclick="play(5)"></td>
+        <td id="6" onclick="play(6)"></td>
+    </tr>
+    <tr>
+        <td id="7" onclick="play(7)" height="100"></td>
+        <td id="8" onclick="play(8)" height="100"></td>
+        <td id="9" onclick="play(9)" height="100"></td>
+    </tr>
+</table>
